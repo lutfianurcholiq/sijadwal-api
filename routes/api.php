@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\Faculty\FacultyController;
+use App\Http\Controllers\Api\Major\MajorController;
+use App\Http\Controllers\Api\Student\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('register', RegisterController::class);
-Route::post('/login', LoginController::class);
+Route::post('login', LoginController::class);
+
+Route::apiResource('student', StudentController::class);
+Route::apiResource('faculty', FacultyController::class);
+Route::apiResource('major', MajorController::class);
