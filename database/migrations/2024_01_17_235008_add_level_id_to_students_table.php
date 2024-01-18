@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('majors', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('faculty_id');
-            $table->string('major_code')->unique();
-            $table->string('major_name');
-            $table->timestamps();
+        Schema::table('students', function (Blueprint $table) {
+            $table->foreignId('level_id')->after('major_id');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('majors');
+        Schema::table('students', function (Blueprint $table) {
+            $table->dropColumn('level_id');
+        });
     }
 };

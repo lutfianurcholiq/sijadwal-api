@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api\Major;
+namespace App\Http\Controllers\Api\Level;
 
 use App\Http\Controllers\Controller;
-use App\Models\Major;
 use Illuminate\Http\Request;
 
-class MajorController extends Controller
+class LevelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $major = Major::all();
-
-        return response()->json($major);
+        //
     }
 
     /**

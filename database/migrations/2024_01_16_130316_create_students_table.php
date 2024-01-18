@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('major_id');
+            $table->foreignId('faculty_id');
             $table->string('nim')->unique();
             $table->string('name');
             $table->date('date_in');
             $table->date('date_out')->nullable();
             $table->string('birth_place');
             $table->date('birth_date');
-            $table->foreignId('major_id')->constrained();
-            $table->foreignId('faculty_id')->constrained();
             $table->timestamps();
         });
     }
