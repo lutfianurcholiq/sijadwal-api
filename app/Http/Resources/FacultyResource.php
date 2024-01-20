@@ -9,21 +9,21 @@ class FacultyResource extends JsonResource
 {
 
     // Define Property
-    public $status;
-    public $message;
-    public $resource;
+    // public $status;
+    // public $message;
+    // public $resource;
 
     /**
      * @param $status
      * @param $message
      * @param $resource
      */
-    public function __construct($status, $message, $resource)
-    {
-        parent::__construct($resource);
-        $this->status = $status;
-        $this->message = $message;
-    }
+    // public function __construct($status, $message, $resource)
+    // {
+    //     parent::__construct($resource);
+    //     $this->status = $status;
+    //     $this->message = $message;
+    // }
     /**
      * Transform the resource into an array.
      *
@@ -31,12 +31,17 @@ class FacultyResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        // return [
+        //     'status' => $this->status,
+        //     'message' => $this->message,
+        //     'data' => $this->resource
+        // ];
+
         return [
-            'response' => [
-                'status' => $this->status,
-                'message' => $this->message
-            ],
-            'data' => $this->resource
+            'id' => $this->id,
+            'faculty code' => $this->faculty_code,
+            'faculty name' => $this->faculty_name,
+            'created_at' => $this->created_at->format('d/m/Y')
         ];
     }
 }
