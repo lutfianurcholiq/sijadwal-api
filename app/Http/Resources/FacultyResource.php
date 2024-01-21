@@ -38,10 +38,10 @@ class FacultyResource extends JsonResource
         // ];
 
         return [
-            'id' => $this->id,
+            // 'id' => $this->id,
             'faculty code' => $this->faculty_code,
             'faculty name' => $this->faculty_name,
-            'created_at' => $this->created_at->format('d/m/Y')
+            // 'created_at' => $this->created_at->format('d/m/Y')
         ];
     }
 }

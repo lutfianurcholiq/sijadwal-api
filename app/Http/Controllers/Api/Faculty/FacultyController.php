@@ -16,7 +16,7 @@ class FacultyController extends ResponseController
      */
     public function index()
     {
-        $faculty = Faculty::all();
+        $faculties = Faculty::all();
         // return $faculty;
 
         // cara list data 1
@@ -30,7 +30,7 @@ class FacultyController extends ResponseController
             
         // cara list data 3
 
-        return $this->sendResponse(FacultyResource::collection($faculty), 'list faculty', 200);
+        return $this->sendResponse(FacultyResource::collection($faculties), 'list faculty', 200);
     
     }
 

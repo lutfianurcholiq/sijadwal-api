@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('faculty_id');
+            $table->foreignId('faculty_id')->constrained();
             $table->string('major_code')->unique();
             $table->string('major_name');
             $table->timestamps();
