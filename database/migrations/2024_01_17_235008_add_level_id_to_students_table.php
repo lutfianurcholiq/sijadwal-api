@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
             $table->foreignId('level_id')->after('major_id');
+
+            $table->foreign('level_id')->references('id')->on('levels');
         });
     }
 

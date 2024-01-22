@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('major_id');
-            $table->foreignId('faculty_id');
+            $table->foreignId('faculty_id')->constrained();
+            $table->foreignId('major_id')->constrained();
             $table->string('nim')->unique();
             $table->string('name');
             $table->date('date_in');
@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('birth_place');
             $table->date('birth_date');
             $table->timestamps();
+
+            // $table->foreign('faculty_id')->references('id')->on('faculties');
+            // $table->foreign('major_id')->references('id')->on('majors');
         });
     }
 

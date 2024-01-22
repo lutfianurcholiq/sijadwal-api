@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers\Api\Student;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ResponseController;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\StudentResource;
 
-class StudentController extends Controller
+class StudentController extends ResponseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $students = Student::all();
+
+        return $this->sendResponse(StudentResource::collection($students), 'list data student', 200);
     }
 
     /**
