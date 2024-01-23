@@ -13,18 +13,18 @@ class Student extends Model
 
     protected $guarded = [];
 
-    public function majors(): HasMany
+    public function major(): BelongsTo
     {
-        return $this->hasMany(Major::class);
+        return $this->belongsTo(Major::class);
     }
 
-    public function faculties(): HasMany
+    public function faculty(): BelongsTo
     {
-        return $this->hasMany(Faculty::class);
+        return $this->belongsTo(Faculty::class);
     }
 
-    public function levels(): HasMany
+    public function level(): BelongsTo
     {
-        return $this->hasMany(Level::class);
+        return $this->belongsTo(Level::class);
     }
 }

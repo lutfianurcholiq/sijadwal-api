@@ -15,7 +15,7 @@ class StudentResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'faculty' => FacultyResource::make($this->faculty),
+            // 'faculty' => FacultyResource::make($this->faculty),
             'major' => MajorResource::make($this->major),
             'level' => LevelResource::make($this->level),
             'nim' => $this->nim,

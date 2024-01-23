@@ -19,8 +19,8 @@ class Faculty extends Model
         return $this->hasMany(Major::class);
     }
 
-    public function student(): BelongsTo
+    public function students(): HasMany
     {
-        return $this->belongsTo(Student::class);
+        return $this->hasMany(Student::class);
     }
 }
