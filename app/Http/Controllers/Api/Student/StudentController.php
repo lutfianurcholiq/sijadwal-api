@@ -24,6 +24,8 @@ class StudentController extends ResponseController
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * @param Illuminate\Http\Request
      */
     public function store(Request $request)
     {
@@ -70,6 +72,9 @@ class StudentController extends ResponseController
 
     /**
      * Update the specified resource in storage.
+     * 
+     * @param Illuminate\Http\Request
+     * @param App\Models\Student
      */
     public function update(Request $request, Student $student)
     {
@@ -115,6 +120,8 @@ class StudentController extends ResponseController
 
     /**
      * Remove the specified resource from storage.
+     * 
+     * @param App\Models\Student
      */
     public function destroy(Student $student)
     {
@@ -124,7 +131,7 @@ class StudentController extends ResponseController
         {
             return $this->sendErrorResponse($find, 'data not found', 404);
         } else {
-            
+
             $student->delete();
 
             return $this->sendResponse([], 'success delete data student', 200);
