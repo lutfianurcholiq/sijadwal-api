@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\LoginController;
+use App\Http\Controllers\Api\Level\LevelController;
+use App\Http\Controllers\Api\Major\MajorController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Faculty\FacultyController;
-use App\Http\Controllers\Api\Major\MajorController;
 use App\Http\Controllers\Api\Student\StudentController;
 
 /*
@@ -29,3 +30,4 @@ Route::post('login', LoginController::class);
 Route::apiResource('student', StudentController::class);
 Route::apiResource('faculty', FacultyController::class);
 Route::apiResource('major', MajorController::class);
+Route::apiResource('level', LevelController::class);
