@@ -80,9 +80,10 @@ class StudentController extends ResponseController
     {
         $find = Student::find($student->id);
 
-        if (!$find) 
-        {
+        if (!$find) {
+
             return $this->sendErrorResponse($find, 'fail data not found', 404);
+
         } else {
 
             $input = $request->all();
@@ -127,9 +128,10 @@ class StudentController extends ResponseController
     {
         $find = Student::find($student->id);
 
-        if (!$find) 
-        {
+        if (!$find) {
+
             return $this->sendErrorResponse($find, 'data not found', 404);
+            
         } else {
 
             $student->delete();
