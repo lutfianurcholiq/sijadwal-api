@@ -55,7 +55,17 @@ class MajorController extends ResponseController
      */
     public function show(string $id)
     {
-        //
+        $find = Major::find($id);
+
+        if (!$find) {
+
+            return $this->sendErrorResponse($find, 'data major not found', 404);
+
+        } else {
+
+            return $this->sendResponse(new MajorResource($find), 'detail data student', 200);
+            
+        }
     }
 
     /**

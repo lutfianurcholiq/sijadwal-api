@@ -67,7 +67,15 @@ class StudentController extends ResponseController
      */
     public function show(string $id)
     {
-        //
+        $find = Student::find($id);
+
+        if (!$find) {
+
+            return $this->sendErrorResponse($find, 'data student not found', 404);
+
+        } else {
+            return $this->sendResponse(new StudentResource($find), 'data student', 200);
+        }
     }
 
     /**

@@ -51,7 +51,17 @@ class LevelController extends ResponseController
      */
     public function show(string $id)
     {
-        //
+        $find = Level::find($id);
+
+        if (!$find) {
+
+            return $this->sendErrorResponse($find, 'data level not found', 404);
+
+        } else {
+
+            return $this->sendResponse($find, 'detail data level', 200);
+            
+        }
     }
 
     /**
